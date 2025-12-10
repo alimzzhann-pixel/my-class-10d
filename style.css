@@ -1,0 +1,228 @@
+/* Переменные для современного дизайна */
+:root {
+    --primary-color: #5d5c61;      /* Глубокий серый (современный акцент) */
+    --secondary-color: #b7dbf0;    /* Светло-голубой/Мятный (акцент) */
+    --accent-color: #ffaa00;       /* Золотистый/Оранжевый (выделение) */
+    --background-color: #f8f9fa;   /* Почти белый фон */
+    --text-dark: #343a40;          /* Темный текст */
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08); /* Мягкая тень */
+}
+
+/* Общие стили и шрифты */
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding-top: 60px; /* Отступ для фиксированного меню */
+    background-color: var(--background-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ---- Стили для Навигации (Меню) ---- */
+nav {
+    background-color: white; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Закрепляем меню */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Гарантируем, что меню поверх всего */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+}
+
+nav ul li a {
+    display: block;
+    padding: 18px 25px;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s, border-bottom 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+nav ul li a:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    border-bottom: 3px solid var(--accent-color);
+}
+
+/* Шапка (Header) - Секция "Герой" */
+header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #738a9e 100%);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 3.8em;
+    margin-bottom: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Основной контент (Main) и Секции */
+main {
+    padding-bottom: 40px;
+}
+
+section {
+    margin-bottom: 35px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light); /* Современная мягкая тень */
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-3px); /* Легкий эффект при наведении */
+}
+
+/* Заголовки */
+h2 {
+    color: var(--primary-color);
+    font-weight: 700;
+    border-left: 5px solid var(--accent-color);
+    padding-left: 15px;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+/* Секция "Наша Легенда" */
+#story {
+    border-left: none;
+    padding: 30px;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+#story h2 {
+    color: var(--text-dark);
+}
+
+/* Таблица Учеников */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+#class-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+#class-table th, #class-table td {
+    padding: 15px 18px;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #e9ecef; /* Тонкая разделительная линия */
+}
+
+#class-table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+/* Стиль "Зебра" */
+#class-table tbody tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+#class-table tbody tr:hover {
+    background-color: #e3f2fd; /* Голубой при наведении */
+    cursor: pointer;
+}
+
+/* Карточки (Достижения и События) */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card, .achievement-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--secondary-color);
+}
+
+.card:hover, .achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.achievement-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.3em;
+}
+
+/* Стиль для секции Событий/Руководителя */
+.info-card {
+    border-top: 4px solid var(--primary-color);
+}
+
+.event-card {
+    border-top: 4px solid var(--accent-color);
+}
+
+.main-person {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.event-date {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #dc3545; /* Красный для даты */
+}
+
+/* Подвал (Footer) */
+footer {
+    background-color: var(--text-dark);
+    color: #f8f9fa;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+    nav ul {
+        flex-wrap: wrap; /* Перенос ссылок на мобильных */
+    }
+    nav ul li a {
+        padding: 10px 15px;
+    }
+    section {
+        padding-top: 80px; /* Увеличиваем отступ, т.к. меню может быть шире */
+    }
+}
